@@ -30,9 +30,9 @@
             overflow-x: hidden;
         }
         
-        /* Header Impactante - LOGO MAXIMIZADO */
+        /* Header Impactante - LOGO E BOTÃO MAXIMIZADOS */
         header {
-            padding: 10px 15px;
+            padding: 8px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -41,21 +41,23 @@
             top: 0;
             z-index: 100;
             border-bottom: 1px solid var(--primary);
-            min-height: 70px;
+            min-height: 80px;
+            gap: 25px; /* Espaçamento máximo de 25px entre logo e botão */
         }
         
-        /* Logo - MAXIMIZADO sem quebrar o header */
+        /* Logo - MAXIMIZADO */
         .logo {
             display: flex;
             align-items: center;
             flex: 1;
+            min-width: 0; /* Permite que a logo encolha se necessário */
         }
         
         .logo img {
-            height: 60px;
+            height: 70px;
             width: auto;
-            max-height: 65px;
-            max-width: 250px;
+            max-height: 75px;
+            max-width: 350px;
             object-fit: contain;
             filter: brightness(1.1);
             transition: transform 0.3s ease;
@@ -68,7 +70,7 @@
         /* Fallback caso a logo não carregue */
         .logo-text {
             font-weight: 900;
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             color: var(--light);
             display: none;
         }
@@ -77,9 +79,27 @@
             color: var(--primary);
         }
         
-        /* Botão do header ajustado */
+        /* Botão do header MAXIMIZADO */
         .header-cta {
             flex-shrink: 0;
+        }
+        
+        .cta-button {
+            padding: 12px 28px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 45, 84, 0.3);
+            white-space: nowrap;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 45, 84, 0.4);
         }
         
         /* Hero Section */
@@ -324,35 +344,27 @@
             box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
         }
         
-        .cta-button {
-            padding: 8px 20px;
-            font-size: 0.9rem;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: transform 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-        }
-        
         /* Responsividade MOBILE-FIRST */
         @media (max-width: 768px) {
             header {
-                padding: 8px 10px;
-                min-height: 60px;
+                padding: 6px 12px;
+                min-height: 70px;
+                gap: 20px;
             }
             
             .logo img {
-                height: 50px;
-                max-height: 55px;
-                max-width: 200px;
+                height: 60px;
+                max-height: 65px;
+                max-width: 280px;
             }
             
             .logo-text {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
+            }
+            
+            .cta-button {
+                padding: 10px 22px;
+                font-size: 1rem;
             }
             
             .hero {
@@ -386,18 +398,24 @@
         
         @media (max-width: 480px) {
             header {
-                padding: 5px 8px;
-                min-height: 55px;
+                padding: 5px 10px;
+                min-height: 65px;
+                gap: 15px;
             }
             
             .logo img {
-                height: 45px;
-                max-height: 50px;
-                max-width: 180px;
+                height: 55px;
+                max-height: 60px;
+                max-width: 220px;
             }
             
             .logo-text {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+            }
+            
+            .cta-button {
+                padding: 8px 18px;
+                font-size: 0.9rem;
             }
             
             .hero {
@@ -412,11 +430,6 @@
                 grid-template-columns: 1fr;
                 margin: 25px 25px;
                 gap: 6px;
-            }
-            
-            .cta-button {
-                padding: 6px 15px;
-                font-size: 0.8rem;
             }
             
             .carousel-section {
@@ -440,6 +453,23 @@
             
             .carousel-nav.next {
                 right: 10px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            header {
+                gap: 10px;
+            }
+            
+            .logo img {
+                height: 50px;
+                max-height: 55px;
+                max-width: 180px;
+            }
+            
+            .cta-button {
+                padding: 6px 14px;
+                font-size: 0.8rem;
             }
         }
         
