@@ -201,7 +201,7 @@
             z-index: 10;
         }
         
-        /* CARROSSEL REAL - 2 imagens lado a lado em proporção A4 */
+        /* CARROSSEL ROBUSTO - 2 imagens lado a lado em proporção A4 */
         .carousel-section {
             padding: 40px 15px;
             background: linear-gradient(135deg, #1A0A2E 0%, var(--dark) 100%);
@@ -231,8 +231,9 @@
         
         .carousel-track {
             display: flex;
-            transition: transform 0.6s ease-in-out;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             width: 600%; /* 6 slides × 100% cada */
+            will-change: transform;
         }
         
         .carousel-slide {
@@ -291,11 +292,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            user-select: none;
         }
         
         .carousel-nav:hover {
             background: var(--primary);
             transform: translateY(-50%) scale(1.1);
+        }
+        
+        .carousel-nav:active {
+            transform: translateY(-50%) scale(0.95);
         }
         
         .carousel-nav.prev {
@@ -304,6 +310,28 @@
         
         .carousel-nav.next {
             right: 15px;
+        }
+        
+        /* Indicadores do carrossel */
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        
+        .carousel-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-indicator.active {
+            background: var(--primary);
+            transform: scale(1.2);
         }
         
         /* Seção de Produtos */
@@ -502,10 +530,6 @@
             will-change: transform;
         }
         
-        .carousel-track {
-            will-change: transform;
-        }
-        
         /* Preload crítico */
         .hero, .carousel-section {
             contain: layout style paint;
@@ -550,7 +574,7 @@
         <p style="max-width: 600px; margin: 0 auto;">Compare e comprove: <strong>nenhuma placa do mercado tem cores tão vivas e definição tão nítida</strong> quanto as da Otaku City!</p>
     </section>
     
-    <!-- CARROSSEL REAL - 2 imagens lado a lado em proporção A4 -->
+    <!-- CARROSSEL ROBUSTO - 2 imagens lado a lado em proporção A4 -->
     <section class="carousel-section">
         <h2 class="carousel-title">🎨 NOSSOS DESIGNS EXCLUSIVOS</h2>
         <div class="carousel-container">
@@ -643,9 +667,12 @@
             </div>
             
             <!-- Controles de navegação -->
-            <button class="carousel-nav prev" id="prevBtn">‹</button>
-            <button class="carousel-nav next" id="nextBtn">›</button>
+            <button class="carousel-nav prev" id="prevBtn" aria-label="Slide anterior">‹</button>
+            <button class="carousel-nav next" id="nextBtn" aria-label="Próximo slide">›</button>
         </div>
+        
+        <!-- Indicadores do carrossel -->
+        <div class="carousel-indicators" id="carouselIndicators"></div>
     </section>
     
     <!-- Seção de Produtos -->
@@ -714,106 +741,239 @@
             }
         }
         
-        // Carrossel REAL - 2 imagens por vez com controles
-        const carouselTrack = document.getElementById('carouselTrack');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        
-        let currentSlide = 0;
-        const totalSlides = 6; // 6 slides com 2 imagens cada
-        let autoPlayInterval;
-        let isUserInteracting = false;
-        
-        // Função para ir para um slide específico
-        function goToSlide(slideIndex) {
-            if (slideIndex < 0) slideIndex = totalSlides - 1;
-            if (slideIndex >= totalSlides) slideIndex = 0;
-            
-            currentSlide = slideIndex;
-            const translateX = -(slideIndex * 16.666); // 100% / 6 slides = 16.666%
-            carouselTrack.style.transform = `translateX(${translateX}%)`;
-        }
-        
-        // Navegação manual
-        prevBtn.addEventListener('click', () => {
-            isUserInteracting = true;
-            stopAutoPlay();
-            goToSlide(currentSlide - 1);
-            setTimeout(() => {
-                isUserInteracting = false;
-                startAutoPlay();
-            }, 3000);
-        });
-        
-        nextBtn.addEventListener('click', () => {
-            isUserInteracting = true;
-            stopAutoPlay();
-            goToSlide(currentSlide + 1);
-            setTimeout(() => {
-                isUserInteracting = false;
-                startAutoPlay();
-            }, 3000);
-        });
-        
-        // Auto-play - 2 segundos por slide
-        function startAutoPlay() {
-            if (!isUserInteracting) {
-                autoPlayInterval = setInterval(() => {
-                    goToSlide(currentSlide + 1);
-                }, 2000); // 2 segundos por slide
+        // CARROSSEL ROBUSTO - Sistema completamente reescrito
+        class RobustCarousel {
+            constructor() {
+                this.track = document.getElementById('carouselTrack');
+                this.prevBtn = document.getElementById('prevBtn');
+                this.nextBtn = document.getElementById('nextBtn');
+                this.indicatorsContainer = document.getElementById('carouselIndicators');
+                
+                this.currentSlide = 0;
+                this.totalSlides = 6;
+                this.autoPlayInterval = null;
+                this.autoPlayDelay = 4000; // 4 segundos por slide
+                this.isUserInteracting = false;
+                this.isTransitioning = false;
+                this.userInteractionTimeout = null;
+                
+                // Estados de controle
+                this.isPaused = false;
+                this.isVisible = true;
+                
+                this.init();
             }
-        }
-        
-        function stopAutoPlay() {
-            clearInterval(autoPlayInterval);
-        }
-        
-        // Touch events para mobile
-        let startX = 0;
-        let isDragging = false;
-        
-        carouselTrack.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-            isDragging = true;
-            isUserInteracting = true;
-            stopAutoPlay();
-        }, { passive: true });
-        
-        carouselTrack.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-        }, { passive: false });
-        
-        carouselTrack.addEventListener('touchend', (e) => {
-            if (!isDragging) return;
             
-            const endX = e.changedTouches[0].clientX;
-            const diffX = startX - endX;
+            init() {
+                if (!this.track || !this.prevBtn || !this.nextBtn) {
+                    console.warn('Carrossel: Elementos não encontrados');
+                    return;
+                }
+                
+                this.createIndicators();
+                this.bindEvents();
+                this.updateIndicators();
+                this.startAutoPlay();
+                this.setupVisibilityAPI();
+            }
             
-            if (Math.abs(diffX) > 50) {
-                if (diffX > 0) {
-                    goToSlide(currentSlide + 1); // Swipe left - próximo
-                } else {
-                    goToSlide(currentSlide - 1); // Swipe right - anterior
+            createIndicators() {
+                for (let i = 0; i < this.totalSlides; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'carousel-indicator';
+                    indicator.addEventListener('click', () => this.goToSlide(i, true));
+                    this.indicatorsContainer.appendChild(indicator);
                 }
             }
             
-            isDragging = false;
-            setTimeout(() => {
-                isUserInteracting = false;
-                startAutoPlay();
-            }, 3000);
-        }, { passive: true });
+            bindEvents() {
+                // Navegação por botões
+                this.prevBtn.addEventListener('click', () => this.previousSlide());
+                this.nextBtn.addEventListener('click', () => this.nextSlide());
+                
+                // Touch events para mobile
+                this.setupTouchEvents();
+                
+                // Pause no hover (apenas desktop)
+                if (!this.isMobile()) {
+                    this.track.parentElement.addEventListener('mouseenter', () => this.pauseAutoPlay());
+                    this.track.parentElement.addEventListener('mouseleave', () => this.resumeAutoPlay());
+                }
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (this.isInViewport()) {
+                        if (e.key === 'ArrowLeft') this.previousSlide();
+                        if (e.key === 'ArrowRight') this.nextSlide();
+                    }
+                });
+            }
+            
+            setupTouchEvents() {
+                let startX = 0;
+                let startY = 0;
+                let isDragging = false;
+                let hasMoved = false;
+                
+                this.track.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    startY = e.touches[0].clientY;
+                    isDragging = true;
+                    hasMoved = false;
+                    this.handleUserInteraction();
+                }, { passive: true });
+                
+                this.track.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    
+                    const currentX = e.touches[0].clientX;
+                    const currentY = e.touches[0].clientY;
+                    const diffX = Math.abs(currentX - startX);
+                    const diffY = Math.abs(currentY - startY);
+                    
+                    // Se o movimento horizontal é maior que o vertical, previne scroll
+                    if (diffX > diffY && diffX > 10) {
+                        e.preventDefault();
+                        hasMoved = true;
+                    }
+                }, { passive: false });
+                
+                this.track.addEventListener('touchend', (e) => {
+                    if (!isDragging || !hasMoved) return;
+                    
+                    const endX = e.changedTouches[0].clientX;
+                    const diffX = startX - endX;
+                    const threshold = 50;
+                    
+                    if (Math.abs(diffX) > threshold) {
+                        if (diffX > 0) {
+                            this.nextSlide();
+                        } else {
+                            this.previousSlide();
+                        }
+                    }
+                    
+                    isDragging = false;
+                    hasMoved = false;
+                }, { passive: true });
+            }
+            
+            setupVisibilityAPI() {
+                document.addEventListener('visibilitychange', () => {
+                    this.isVisible = !document.hidden;
+                    if (this.isVisible && !this.isPaused) {
+                        this.startAutoPlay();
+                    } else {
+                        this.stopAutoPlay();
+                    }
+                });
+            }
+            
+            goToSlide(slideIndex, isUserAction = false) {
+                if (this.isTransitioning) return;
+                
+                // Normaliza o índice
+                if (slideIndex < 0) slideIndex = this.totalSlides - 1;
+                if (slideIndex >= this.totalSlides) slideIndex = 0;
+                
+                if (slideIndex === this.currentSlide) return;
+                
+                if (isUserAction) {
+                    this.handleUserInteraction();
+                }
+                
+                this.isTransitioning = true;
+                this.currentSlide = slideIndex;
+                
+                const translateX = -(slideIndex * 16.666); // 100% / 6 slides = 16.666%
+                this.track.style.transform = `translateX(${translateX}%)`;
+                
+                this.updateIndicators();
+                
+                // Reset transition flag
+                setTimeout(() => {
+                    this.isTransitioning = false;
+                }, 500);
+            }
+            
+            nextSlide() {
+                this.goToSlide(this.currentSlide + 1, true);
+            }
+            
+            previousSlide() {
+                this.goToSlide(this.currentSlide - 1, true);
+            }
+            
+            updateIndicators() {
+                const indicators = this.indicatorsContainer.querySelectorAll('.carousel-indicator');
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === this.currentSlide);
+                });
+            }
+            
+            handleUserInteraction() {
+                this.isUserInteracting = true;
+                this.stopAutoPlay();
+                
+                // Clear timeout anterior
+                if (this.userInteractionTimeout) {
+                    clearTimeout(this.userInteractionTimeout);
+                }
+                
+                // Resume auto-play após 5 segundos de inatividade
+                this.userInteractionTimeout = setTimeout(() => {
+                    this.isUserInteracting = false;
+                    if (this.isVisible && !this.isPaused) {
+                        this.startAutoPlay();
+                    }
+                }, 5000);
+            }
+            
+            startAutoPlay() {
+                if (this.autoPlayInterval || this.isUserInteracting || this.isPaused || !this.isVisible) {
+                    return;
+                }
+                
+                this.autoPlayInterval = setInterval(() => {
+                    if (!this.isUserInteracting && !this.isPaused && this.isVisible) {
+                        this.goToSlide(this.currentSlide + 1);
+                    }
+                }, this.autoPlayDelay);
+            }
+            
+            stopAutoPlay() {
+                if (this.autoPlayInterval) {
+                    clearInterval(this.autoPlayInterval);
+                    this.autoPlayInterval = null;
+                }
+            }
+            
+            pauseAutoPlay() {
+                this.isPaused = true;
+                this.stopAutoPlay();
+            }
+            
+            resumeAutoPlay() {
+                this.isPaused = false;
+                if (!this.isUserInteracting && this.isVisible) {
+                    this.startAutoPlay();
+                }
+            }
+            
+            isInViewport() {
+                const rect = this.track.getBoundingClientRect();
+                return rect.top < window.innerHeight && rect.bottom > 0;
+            }
+            
+            isMobile() {
+                return window.innerWidth <= 768;
+            }
+        }
         
-        // Pausa auto-play no hover (desktop)
-        const carouselContainer = document.querySelector('.carousel-container');
-        carouselContainer.addEventListener('mouseenter', stopAutoPlay);
-        carouselContainer.addEventListener('mouseleave', () => {
-            if (!isUserInteracting) startAutoPlay();
+        // Inicializa o carrossel quando o DOM estiver pronto
+        document.addEventListener('DOMContentLoaded', () => {
+            new RobustCarousel();
         });
-        
-        // Inicializa auto-play
-        startAutoPlay();
         
         // Preload de imagens críticas
         const criticalImages = [
