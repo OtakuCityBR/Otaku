@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -121,6 +120,7 @@
             font-weight: 700;
         }
         
+        /* PRICE-TAG COMO BOTÃO CTA - mantém aparência exata */
         .price-tag {
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: white;
@@ -131,6 +131,19 @@
             font-weight: 700;
             font-size: 1.5rem;
             box-shadow: 0 5px 15px rgba(255, 45, 84, 0.4);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .price-tag:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 45, 84, 0.5);
+        }
+        
+        .price-tag:active {
+            transform: translateY(0) scale(1.02);
         }
         
         .price-small {
@@ -487,6 +500,11 @@
         .hero, .carousel-section {
             contain: layout style paint;
         }
+        
+        /* Smooth scroll para navegação interna */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
@@ -505,10 +523,11 @@
     <section class="hero">
         <h1>PLACAS DECORATIVAS<br><span class="highlight">QUALIDADE IMPLACÁVEL</span><br>PELO MENOR PREÇO DO MERCADO!</h1>
         
-        <div class="price-tag">
+        <!-- PRICE-TAG AGORA É BOTÃO CTA -->
+        <a href="#products" class="price-tag">
             A PARTIR DE <span style="font-size: 2rem;">R$10</span>
             <div class="price-small">(Por Tempo Limitado)</div>
-        </div>
+        </a>
         
          <!-- Grid de Vídeos - FORMATO RETRATO -->
         <div class="video-grid">
@@ -625,7 +644,7 @@
     </section>
     
     <!-- Seção de Produtos -->
-    <section class="products">
+    <section class="products" id="products">
      
         <div class="product-card">
             <h3 class="product-title">🔥 PLACA MÉDIA (20x30cm) - MAIS VENDIDA</h3>
