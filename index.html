@@ -334,68 +334,6 @@
             transform: scale(1.2);
         }
         
-        /* Seção de Produtos */
-        .products {
-            padding: 0 15px 30px;
-            background: url('https://example.com/anime-pattern.png') var(--dark);
-        }
-        
-        .product-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-        }
-        
-        .product-title {
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-        
-        .product-price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 10px 0;
-        }
-        
-        .bulk-discount {
-            color: var(--accent);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-        
-        /* Catálogo */
-        .catalog-cta {
-            text-align: center;
-            padding: 20px 15px;
-            background: linear-gradient(90deg, var(--dark) 0%, #1A0A2E 100%);
-        }
-        
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px 15px;
-            background: #0A0A15;
-        }
-        
-        .whatsapp-button {
-            background: #25D366;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            margin-top: 20px;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
-        }
-        
         /* BOTÃO FIXO "COMO COMPRAR" */
         .floating-help-button {
             position: fixed;
@@ -505,6 +443,68 @@
                 opacity: 1;
                 transform: translateY(0) scale(1);
             }
+        }
+        
+        /* Seção de Produtos */
+        .products {
+            padding: 0 15px 30px;
+            background: url('https://example.com/anime-pattern.png') var(--dark);
+        }
+        
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+        
+        .product-title {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        
+        .bulk-discount {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        /* Catálogo */
+        .catalog-cta {
+            text-align: center;
+            padding: 20px 15px;
+            background: linear-gradient(90deg, var(--dark) 0%, #1A0A2E 100%);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            background: #0A0A15;
+        }
+        
+        .whatsapp-button {
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
         }
         
         /* Responsividade MOBILE-FIRST */
@@ -901,8 +901,8 @@
                 this.closePopup = document.getElementById('closePopup');
                 this.popupVideo = document.getElementById('popupVideo');
                 
-                // SUBSTITUA ESTE LINK PELO SEU VÍDEO DO VIMEO
-                this.videoUrl = 'https://player.vimeo.com/video/SEU_VIDEO_ID?autoplay=1&title=0&byline=0&portrait=0';
+                // Link do vídeo do Vimeo configurado
+                this.videoUrl = 'https://player.vimeo.com/video/1098854357?autoplay=1&title=0&byline=0&portrait=0';
                 
                 this.init();
             }
