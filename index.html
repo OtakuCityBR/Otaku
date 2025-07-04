@@ -24,6 +24,11 @@
             --accent: #FFD700; /* Dourado Destaque */
         }
         
+        /* Smooth scroll para navegação interna */
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             background-color: var(--dark);
             color: var(--light);
@@ -140,10 +145,15 @@
         .price-tag:hover {
             transform: translateY(-2px) scale(1.05);
             box-shadow: 0 8px 25px rgba(255, 45, 84, 0.5);
+            color: white;
         }
         
         .price-tag:active {
             transform: translateY(0) scale(1.02);
+        }
+        
+        .price-tag:visited {
+            color: white;
         }
         
         .price-small {
@@ -500,11 +510,6 @@
         .hero, .carousel-section {
             contain: layout style paint;
         }
-        
-        /* Smooth scroll para navegação interna */
-        html {
-            scroll-behavior: smooth;
-        }
     </style>
 </head>
 <body>
@@ -524,7 +529,7 @@
         <h1>PLACAS DECORATIVAS<br><span class="highlight">QUALIDADE IMPLACÁVEL</span><br>PELO MENOR PREÇO DO MERCADO!</h1>
         
         <!-- PRICE-TAG AGORA É BOTÃO CTA -->
-        <a href="#products" class="price-tag">
+        <a href="#products" class="price-tag" onclick="scrollToProducts(event)">
             A PARTIR DE <span style="font-size: 2rem;">R$10</span>
             <div class="price-small">(Por Tempo Limitado)</div>
         </a>
@@ -697,6 +702,18 @@
 </footer>
     
     <script>
+        // Função para scroll suave até os produtos
+        function scrollToProducts(event) {
+            event.preventDefault();
+            const productsSection = document.getElementById('products');
+            if (productsSection) {
+                productsSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+        
         // Carrossel REAL - 2 imagens por vez com controles
         const carouselTrack = document.getElementById('carouselTrack');
         const prevBtn = document.getElementById('prevBtn');
