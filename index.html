@@ -1,8 +1,13 @@
+HTML
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Otaku City - Placas decorativas de anime com qualidade implacável e preços acessíveis. Explore nosso catálogo com mais de 1500 designs exclusivos!">
+    <meta name="keywords" content="placas decorativas, placas decorativas anime, decoração otaku, placas personalizadas, quadros anime, mangá, cultura japonesa, decoração quarto otaku, placas anime, Naruto, Dragon Ball, One Piece, Attack on Titan, Demon Slayer">
+	<meta name="robots" content="index, follow">
     <title>Otaku City | Placas Decorativas Anime - Qualidade Implacável</title>
     <style>
         /* Reset e Fontes */
@@ -12,9 +17,9 @@
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
-        
+
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
-        
+
         /* Cores Temáticas */
         :root {
             --primary: #FF2D54; /* Rosa Neon */
@@ -23,13 +28,18 @@
             --light: #FFFFFF;
             --accent: #FFD700; /* Dourado Destaque */
         }
-        
+
+        /* Smooth scroll para navegação interna */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--dark);
             color: var(--light);
             overflow-x: hidden;
         }
-        
+
         /* Header Impactante - LOGO E BOTÃO MAXIMIZADOS */
         header {
             padding: 8px 15px;
@@ -44,7 +54,7 @@
             min-height: 80px;
             gap: 25px; /* Espaçamento máximo de 25px entre logo e botão */
         }
-        
+
         /* Logo - MAXIMIZADO */
         .logo {
             display: flex;
@@ -52,7 +62,7 @@
             flex: 1;
             min-width: 0; /* Permite que a logo encolha se necessário */
         }
-        
+
         .logo img {
             height: 70px;
             width: auto;
@@ -62,11 +72,11 @@
             filter: brightness(1.1);
             transition: transform 0.3s ease;
         }
-        
+
         .logo img:hover {
             transform: scale(1.05);
         }
-        
+
         /* Fallback caso a logo não carregue */
         .logo-text {
             font-weight: 900;
@@ -74,16 +84,16 @@
             color: var(--light);
             display: none;
         }
-        
+
         .logo-text span {
             color: var(--primary);
         }
-        
+
         /* Botão do header MAXIMIZADO */
         .header-cta {
             flex-shrink: 0;
         }
-        
+
         .cta-button {
             padding: 12px 28px;
             font-size: 1.1rem;
@@ -96,30 +106,31 @@
             box-shadow: 0 4px 15px rgba(255, 45, 84, 0.3);
             white-space: nowrap;
         }
-        
+
         .cta-button:hover {
             transform: translateY(-2px) scale(1.05);
             box-shadow: 0 6px 20px rgba(255, 45, 84, 0.4);
         }
-        
+
         /* Hero Section */
         .hero {
             text-align: center;
             padding: 30px 15px 50px;
             background: radial-gradient(circle at top, #2A0C4E 0%, var(--dark) 70%);
         }
-        
+
         h1 {
             font-size: 2.3rem;
             margin-bottom: 15px;
             line-height: 1.3;
         }
-        
+
         .highlight {
             color: var(--accent);
             font-weight: 700;
         }
-        
+
+        /* PRICE-TAG COMO BOTÃO CTA - mantém aparência exata */
         .price-tag {
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: white;
@@ -130,13 +141,31 @@
             font-weight: 700;
             font-size: 1.5rem;
             box-shadow: 0 5px 15px rgba(255, 45, 84, 0.4);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
         }
-        
+
+        .price-tag:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 45, 84, 0.5);
+            color: white;
+        }
+
+        .price-tag:active {
+            transform: translateY(0) scale(1.02);
+        }
+
+        .price-tag:visited {
+            color: white;
+        }
+
         .price-small {
             font-size: 0.8rem;
             opacity: 0.9;
         }
-        
+
         /* VÍDEOS CORRIGIDOS - Formato RETRATO com 15px laterais */
         .video-grid {
             display: grid;
@@ -145,7 +174,7 @@
             margin: 30px 25px;
             max-width: calc(100vw - 30px);
         }
-        
+
         .video-container {
             border-radius: 10px;
             overflow: hidden;
@@ -155,7 +184,7 @@
             height: 0;
             padding-bottom: 177.78%; /* Aspect ratio 9:16 (retrato) = 16/9 = 1.778 */
         }
-        
+
         .video-container iframe {
             position: absolute;
             top: 0;
@@ -164,7 +193,7 @@
             height: 100%;
             border: none;
         }
-        
+
         .video-label {
             position: absolute;
             bottom: 8px;
@@ -176,21 +205,21 @@
             font-weight: 600;
             z-index: 10;
         }
-        
-        /* CARROSSEL REAL - 2 imagens lado a lado em proporção A4 */
+
+        /* CARROSSEL ROBUSTO - 2 imagens lado a lado em proporção A4 */
         .carousel-section {
             padding: 40px 15px;
             background: linear-gradient(135deg, #1A0A2E 0%, var(--dark) 100%);
             margin-bottom: 30px;
         }
-        
+
         .carousel-title {
             text-align: center;
             margin-bottom: 30px;
             font-size: 1.8rem;
             color: var(--accent);
         }
-        
+
         .carousel-container {
             position: relative;
             max-width: 1200px;
@@ -199,18 +228,19 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
-        
+
         .carousel-wrapper {
             position: relative;
             overflow: hidden;
         }
-        
+
         .carousel-track {
             display: flex;
-            transition: transform 0.6s ease-in-out;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             width: 600%; /* 6 slides × 100% cada */
+            will-change: transform;
         }
-        
+
         .carousel-slide {
             width: 16.666%; /* 100% / 6 slides = 16.666% */
             display: flex;
@@ -218,24 +248,24 @@
             padding: 0 5px;
             flex-shrink: 0;
         }
-        
+
         .carousel-item {
             flex: 1;
             border-radius: 8px;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .carousel-item:hover {
             transform: translateY(-3px) scale(1.02);
             box-shadow: 0 12px 25px rgba(255, 45, 84, 0.3);
         }
-        
+
         .carousel-item a {
             display: block;
             text-decoration: none;
         }
-        
+
         .carousel-item img {
             width: 100%;
             aspect-ratio: 1 / 1.414; /* Proporção A4 REAL */
@@ -244,11 +274,11 @@
             border: 2px solid rgba(255, 255, 255, 0.1);
             transition: border-color 0.3s ease;
         }
-        
+
         .carousel-item img:hover {
             border-color: var(--primary);
         }
-        
+
         /* Controles de navegação */
         .carousel-nav {
             position: absolute;
@@ -267,27 +297,159 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            user-select: none;
         }
-        
+
         .carousel-nav:hover {
             background: var(--primary);
             transform: translateY(-50%) scale(1.1);
         }
-        
+
+        .carousel-nav:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
         .carousel-nav.prev {
             left: 15px;
         }
-        
+
         .carousel-nav.next {
             right: 15px;
         }
-        
+
+        /* Indicadores do carrossel */
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .carousel-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicator.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* BOTÃO FIXO "COMO COMPRAR" */
+        .floating-help-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(255, 45, 84, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .floating-help-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 45, 84, 0.6);
+        }
+
+        .floating-help-button:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        /* POP-UP DE VÍDEO */
+        .video-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .video-popup-overlay.active {
+            display: flex;
+        }
+
+        .video-popup-content {
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+            height: 80vh;
+            max-height: 700px;
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            animation: slideUp 0.4s ease;
+        }
+
+        .video-popup-close {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .video-popup-close:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
         /* Seção de Produtos */
         .products {
-            padding: 50px 15px;
+            padding: 0 15px 30px;
             background: url('https://example.com/anime-pattern.png') var(--dark);
         }
-        
+
         .product-card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
@@ -296,40 +458,40 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
         }
-        
+
         .product-title {
             color: var(--primary);
             margin-bottom: 10px;
             font-size: 1.3rem;
         }
-        
+
         .product-price {
             font-size: 1.5rem;
             font-weight: 700;
             margin: 10px 0;
         }
-        
+
         .bulk-discount {
             color: var(--accent);
             font-size: 0.9rem;
             margin-bottom: 15px;
             display: block;
         }
-        
+
         /* Catálogo */
         .catalog-cta {
             text-align: center;
             padding: 20px 15px;
             background: linear-gradient(90deg, var(--dark) 0%, #1A0A2E 100%);
         }
-        
+
         /* Footer */
         footer {
             text-align: center;
             padding: 30px 15px;
             background: #0A0A15;
         }
-        
+
         .whatsapp-button {
             background: #25D366;
             color: white;
@@ -343,7 +505,7 @@
             margin-top: 20px;
             box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
         }
-        
+
         /* Responsividade MOBILE-FIRST */
         @media (max-width: 768px) {
             header {
@@ -351,137 +513,161 @@
                 min-height: 70px;
                 gap: 20px;
             }
-            
+
             .logo img {
                 height: 60px;
                 max-height: 65px;
                 max-width: 280px;
             }
-            
+
             .logo-text {
                 font-size: 2.2rem;
             }
-            
+
             .cta-button {
                 padding: 10px 22px;
                 font-size: 1rem;
             }
-            
+
             .hero {
                 padding: 20px 10px 40px;
             }
-            
+
             h1 {
                 font-size: 1.8rem;
             }
-            
+
             .video-grid {
                 margin: 20px 25px;
                 gap: 8px;
             }
-            
+
             .video-label {
                 font-size: 0.6rem;
                 padding: 3px 6px;
             }
-            
+
             .carousel-section {
                 padding: 30px 15px;
             }
-            
+
             .carousel-nav {
                 width: 40px;
                 height: 40px;
                 font-size: 1.2rem;
             }
+
+            /* Botão fixo mobile */
+            .floating-help-button {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px 16px;
+                font-size: 0.9rem;
+            }
+
+            /* Pop-up mobile */
+            .video-popup-content {
+                width: 95%;
+                height: 85vh;
+                max-height: none;
+            }
         }
-        
+
         @media (max-width: 480px) {
             header {
                 padding: 5px 10px;
                 min-height: 65px;
                 gap: 15px;
             }
-            
+
             .logo img {
                 height: 55px;
                 max-height: 60px;
                 max-width: 220px;
             }
-            
+
             .logo-text {
                 font-size: 1.8rem;
             }
-            
+
             .cta-button {
                 padding: 8px 18px;
                 font-size: 0.9rem;
             }
-            
+
             .hero {
                 padding: 15px 8px 30px;
             }
-            
+
             h1 {
                 font-size: 1.6rem;
             }
-            
+
             .video-grid {
                 grid-template-columns: 1fr;
                 margin: 25px 25px;
                 gap: 6px;
             }
-            
+
             .carousel-section {
                 padding: 25px 15px;
             }
-            
+
             /* Mobile - 1 slide por vez (mas ainda com 2 imagens lado a lado) */
             .carousel-slide {
                 gap: 8px;
             }
-            
+
             .carousel-nav {
                 width: 35px;
                 height: 35px;
                 font-size: 1rem;
             }
-            
+
             .carousel-nav.prev {
                 left: 10px;
             }
-            
+
             .carousel-nav.next {
                 right: 10px;
             }
+
+            /* Botão fixo mobile pequeno */
+            .floating-help-button {
+                bottom: 10px;
+                right: 10px;
+                padding: 10px 14px;
+                font-size: 0.8rem;
+            }
         }
-        
+
         @media (max-width: 360px) {
             header {
                 gap: 10px;
             }
-            
+
             .logo img {
                 height: 50px;
                 max-height: 55px;
                 max-width: 180px;
             }
-            
+
             .cta-button {
                 padding: 6px 14px;
                 font-size: 0.8rem;
             }
+
+            .floating-help-button {
+                padding: 8px 12px;
+                font-size: 0.75rem;
+            }
         }
-        
+
         /* Otimizações de performance */
         .carousel-item img {
             will-change: transform;
         }
-        
-        .carousel-track {
-            will-change: transform;
-        }
-        
+
         /* Preload crítico */
         .hero, .carousel-section {
             contain: layout style paint;
@@ -489,7 +675,6 @@
     </style>
 </head>
 <body>
-    <!-- Header com Logo Maximizado -->
     <header>
         <div class="logo">
             <img src="https://i.ibb.co/5fx7ydb/OC.png" alt="Otaku City Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -499,39 +684,35 @@
             <a href="https://otakucitybr.github.io/catalogo/" class="cta-button">VER CATÁLOGO</a>
         </div>
     </header>
-    
-    <!-- Hero Section -->
+
     <section class="hero">
         <h1>PLACAS DECORATIVAS<br><span class="highlight">QUALIDADE IMPLACÁVEL</span><br>PELO MENOR PREÇO DO MERCADO!</h1>
-        
-        <div class="price-tag">
+
+        <a href="#products" class="price-tag" onclick="scrollToProducts(event)">
             A PARTIR DE <span style="font-size: 2rem;">R$10</span>
             <div class="price-small">(Por Tempo Limitado)</div>
-        </div>
-        
-         <!-- Grid de Vídeos - FORMATO RETRATO -->
-        <div class="video-grid">
+        </a>
+
+         <div class="video-grid">
             <div class="video-container">
                 <iframe src="https://player.vimeo.com/video/1097998940?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&background=1&controls=0" loading="lazy" allow="autoplay; fullscreen"></iframe>
                 <div class="video-label">📍 Banca na Praça da Liberdade</div>
             </div>
-            
+
             <div class="video-container">
                 <iframe src="https://player.vimeo.com/video/1097998959?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&background=1&controls=0" loading="lazy" allow="autoplay; fullscreen"></iframe>
                 <div class="video-label">🖼️ Detalhe da Qualidade Gráfica</div>
             </div>
         </div>
-        
+
         <p style="max-width: 600px; margin: 0 auto;">Compare e comprove: <strong>nenhuma placa do mercado tem cores tão vivas e definição tão nítida</strong> quanto as da Otaku City!</p>
     </section>
-    
-    <!-- CARROSSEL REAL - 2 imagens lado a lado em proporção A4 -->
+
     <section class="carousel-section">
         <h2 class="carousel-title">🎨 NOSSOS DESIGNS EXCLUSIVOS</h2>
         <div class="carousel-container">
             <div class="carousel-wrapper">
                 <div class="carousel-track" id="carouselTrack">
-                    <!-- SLIDE 1 - 2 imagens lado a lado -->
                     <div class="carousel-slide">
                         <div class="carousel-item">
                             <a href="https://otakucitybr.github.io/Naruto/" target="_blank">
@@ -544,8 +725,7 @@
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- SLIDE 2 - 2 imagens lado a lado -->
+
                     <div class="carousel-slide">
                         <div class="carousel-item">
                             <a href="https://otakucitybr.github.io/Solo/" target="_blank">
@@ -558,8 +738,7 @@
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- SLIDE 3 - 2 imagens lado a lado -->
+
                     <div class="carousel-slide">
                         <div class="carousel-item">
                             <a href="https://otakucitybr.github.io/Diarios-de-uma-Apotecaria/" target="_blank">
@@ -572,8 +751,7 @@
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- SLIDE 4 - 2 imagens lado a lado -->
+
                     <div class="carousel-slide">
                         <div class="carousel-item">
                             <a href="https://otakucitybr.github.io/kny/" target="_blank">
@@ -586,8 +764,7 @@
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- SLIDE 5 - 2 imagens lado a lado -->
+
                     <div class="carousel-slide">
                         <div class="carousel-item">
                             <a href="https://otakucitybr.github.io/berserk/" target="_blank">
@@ -600,8 +777,7 @@
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- SLIDE 6 - 2 imagens lado a lado -->
+
                     <div class="carousel-slide">
                         <div class="carousel-item">
                             <a href="https://otakucitybr.github.io/HelloKitty/" target="_blank">
@@ -616,38 +792,38 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Controles de navegação -->
-            <button class="carousel-nav prev" id="prevBtn">‹</button>
-            <button class="carousel-nav next" id="nextBtn">›</button>
+
+            <button class="carousel-nav prev" id="prevBtn" aria-label="Slide anterior">‹</button>
+            <button class="carousel-nav next" id="nextBtn" aria-label="Próximo slide">›</button>
         </div>
+
+        <div class="carousel-indicators" id="carouselIndicators"></div>
     </section>
-    
-    <!-- Seção de Produtos -->
-    <section class="products">
+
+    <section class="products" id="products">
+
         <div class="product-card">
-            <h3 class="product-title">🎯 PLACA PEQUENA (15x20cm)</h3>
-            <div class="product-price">R$ 10,00</div>
-            <span class="bulk-discount">💰 Desconto progressivo: 3+ placas = R$ 8,00 cada</span>
+            <h3 class="product-title">🔥 PLACA "P" PADRÃO (20x30cm) - MAIS VENDIDA</h3>
+            <div class="product-price">R$ 12,00</div>
+            <span class="bulk-discount">💰 Desconto progressivo: 5+ placas = R$ 10,00 cada</span>
             <a href="#" class="cta-button">COMPRAR AGORA</a>
         </div>
-        
+
         <div class="product-card">
-            <h3 class="product-title">🔥 PLACA MÉDIA (20x30cm) - MAIS VENDIDA</h3>
-            <div class="product-price">R$ 15,00</div>
-            <span class="bulk-discount">💰 Desconto progressivo: 3+ placas = R$ 12,00 cada</span>
-            <a href="#" class="cta-button">COMPRAR AGORA</a>
-        </div>
-        
-        <div class="product-card">
-            <h3 class="product-title">⭐ PLACA GRANDE (30x40cm) - PREMIUM</h3>
+            <h3 class="product-title">⭐ PLACA "G" GRANDE (30x40cm) - PREMIUM</h3>
             <div class="product-price">R$ 25,00</div>
             <span class="bulk-discount">💰 Desconto progressivo: 3+ placas = R$ 20,00 cada</span>
             <a href="#" class="cta-button">COMPRAR AGORA</a>
         </div>
+
+		<div class="product-card">
+            <h3 class="product-title">🎯 PhotoCards "PC" (em breve)</h3>
+            <div class="product-price">R$ 8,00</div>
+            <span class="bulk-discount">💰 Desconto progressivo: 10+ pc's = R$ 5,00 cada</span>
+            <a href="https://wa.me/5511958588616?text=Olá! Gostaria saber mais sobre a reserva de PhotoCards" class="cta-button">RESERVE O SEU</a>
+        </div>
     </section>
-    
-    <!-- Call to Action do Catálogo -->
+
     <section class="catalog-cta">
         <h2>📚 EXPLORE NOSSO CATÁLOGO COMPLETO</h2>
         <p>Mais de 1500 imagens exclusivas organizados por anime!</p>
@@ -655,140 +831,225 @@
             📖 VER CATÁLOGO COMPLETO
         </a>
     </section>
-    
-    <!-- Footer -->
+
     <footer>
-    <h3>💬 FAÇA SUA IMAGEM AGORA!</h3>
-    <p>Fazemos qualquer imgem até fotos pessoais</p>
-    <a href="https://wa.me/5511958588616?text=Olá! Gostaria saber mais sobre imagens por encomenda!" class="whatsapp-button">
-        📱 CHAMAR NO WHATSAPP
-    </a>
-    
-    <!-- Linha horizontal (adicionei uma div separada para controle) -->
-    <div style="border-top: 1px solid rgba(255,255,255,0.5); width: 100%; margin: 20px 0 0;"></div>
-    
-    <!-- Logo OCT entre a linha e o botão (agora posicionada corretamente) -->
-    <div style="width: 100%; padding: 15px 0; text-align: center;">
-        <img src="https://i.ibb.co/y3wvPbx/OCT.png" alt="Otaku City Logo" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+        <h3>💬 FAÇA SUA IMAGEM AGORA!</h3>
+        <p>Fazemos qualquer imagem até fotos pessoais</p>
+        <a href="https://wa.me/5511958588616?text=Olá! Gostaria saber mais sobre imagens por encomenda!" class="whatsapp-button">
+            📱 CHAMAR NO WHATSAPP
+        </a>
+
+        <div class="footer-logo">
+            <img src="https://i.ibb.co/y3wvPbx/OCT.png" alt="Otaku City Logo">
+        </div>
+
+        <hr class="footer-divider">
+
+        <p class="copyright">© 2025 Otaku City - Qualidade Implacável</p>
+    </footer>
+
+    <button class="floating-help-button" id="helpButton">
+        🛒 COMO COMPRAR
+    </button>
+
+    <div class="video-popup-overlay" id="videoPopup">
+        <div class="video-popup-content">
+            <button class="video-popup-close" id="closePopup">×</button>
+            <iframe class="video-popup-iframe" id="popupVideo" src="" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+        </div>
     </div>
-    
-    <!-- Texto de copyright (sem borda, pois já adicionei a linha acima) -->
-    <p class="copyright" style="margin-top: 0; opacity: 0.7; padding-top: 0;">© 2025 Otaku City - Qualidade Implacável</p>
-</footer>
 
     <script>
-        // Carrossel REAL - 2 imagens por vez com controles
-        const carouselTrack = document.getElementById('carouselTrack');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        
-        let currentSlide = 0;
-        const totalSlides = 6; // 6 slides com 2 imagens cada
-        let autoPlayInterval;
-        let isUserInteracting = false;
-        
-        // Função para ir para um slide específico
-        function goToSlide(slideIndex) {
-            if (slideIndex < 0) slideIndex = totalSlides - 1;
-            if (slideIndex >= totalSlides) slideIndex = 0;
-            
-            currentSlide = slideIndex;
-            const translateX = -(slideIndex * 16.666); // 100% / 6 slides = 16.666%
-            carouselTrack.style.transform = `translateX(${translateX}%)`;
-        }
-        
-        // Navegação manual
-        prevBtn.addEventListener('click', () => {
-            isUserInteracting = true;
-            stopAutoPlay();
-            goToSlide(currentSlide - 1);
-            setTimeout(() => {
-                isUserInteracting = false;
-                startAutoPlay();
-            }, 3000);
-        });
-        
-        nextBtn.addEventListener('click', () => {
-            isUserInteracting = true;
-            stopAutoPlay();
-            goToSlide(currentSlide + 1);
-            setTimeout(() => {
-                isUserInteracting = false;
-                startAutoPlay();
-            }, 3000);
-        });
-        
-        // Auto-play - 2 segundos por slide
-        function startAutoPlay() {
-            if (!isUserInteracting) {
-                autoPlayInterval = setInterval(() => {
-                    goToSlide(currentSlide + 1);
-                }, 2000); // 2 segundos por slide
+        // Função para scroll suave até os produtos
+        function scrollToProducts(event) {
+            event.preventDefault();
+            const productsSection = document.getElementById('products');
+            if (productsSection) {
+                productsSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         }
-        
-        function stopAutoPlay() {
-            clearInterval(autoPlayInterval);
-        }
-        
-        // Touch events para mobile
-        let startX = 0;
-        let isDragging = false;
-        
-        carouselTrack.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-            isDragging = true;
-            isUserInteracting = true;
-            stopAutoPlay();
-        }, { passive: true });
-        
-        carouselTrack.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-        }, { passive: false });
-        
-        carouselTrack.addEventListener('touchend', (e) => {
-            if (!isDragging) return;
-            
-            const endX = e.changedTouches[0].clientX;
-            const diffX = startX - endX;
-            
-            if (Math.abs(diffX) > 50) {
-                if (diffX > 0) {
-                    goToSlide(currentSlide + 1); // Swipe left - próximo
-                } else {
-                    goToSlide(currentSlide - 1); // Swipe right - anterior
-                }
-            }
-            
-            isDragging = false;
-            setTimeout(() => {
-                isUserInteracting = false;
-                startAutoPlay();
-            }, 3000);
-        }, { passive: true });
-        
-        // Pausa auto-play no hover (desktop)
-        const carouselContainer = document.querySelector('.carousel-container');
-        carouselContainer.addEventListener('mouseenter', stopAutoPlay);
-        carouselContainer.addEventListener('mouseleave', () => {
-            if (!isUserInteracting) startAutoPlay();
-        });
-        
-        // Inicializa auto-play
-        startAutoPlay();
-        
-        // Preload de imagens críticas
-        const criticalImages = [
-            'https://i.ibb.co/1GSVPdc1/N-52.jpg',
-            'https://i.ibb.co/S7Mt7QYb/OP-4.jpg',
-            'https://i.ibb.co/tMcDwhdd/2.jpg'
-        ];
 
-        criticalImages.forEach(src => {
-            const img = new Image();
-            img.src = src;
+        // SISTEMA DE POP-UP DE VÍDEO
+        class VideoPopup {
+            constructor() {
+                this.helpButton = document.getElementById('helpButton');
+                this.videoPopup = document.getElementById('videoPopup');
+                this.closePopup = document.getElementById('closePopup');
+                this.popupVideo = document.getElementById('popupVideo');
+
+                // Link do vídeo do Vimeo configurado
+                this.videoUrl = 'https://player.vimeo.com/video/1098854357?autoplay=1&title=0&byline=0&portrait=0';
+
+                this.init();
+            }
+
+            init() {
+                if (!this.helpButton || !this.videoPopup || !this.closePopup || !this.popupVideo) {
+                    console.warn('Elementos do pop-up não encontrados. Verifique IDs.');
+                    return;
+                }
+
+                this.bindEvents();
+            }
+
+            bindEvents() {
+                // Abrir pop-up
+                this.helpButton.addEventListener('click', () => this.openPopup());
+
+                // Fechar pop-up
+                this.closePopup.addEventListener('click', () => this.closePopupHandler());
+
+                // Fechar clicando no overlay
+                this.videoPopup.addEventListener('click', (e) => {
+                    if (e.target === this.videoPopup) {
+                        this.closePopupHandler();
+                    }
+                });
+
+                // Fechar com ESC
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.videoPopup.classList.contains('active')) {
+                        this.closePopupHandler();
+                    }
+                });
+            }
+
+            openPopup() {
+                // Carrega o vídeo apenas quando abrir
+                this.popupVideo.src = this.videoUrl;
+                this.videoPopup.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Evita scroll do fundo
+            }
+
+            closePopupHandler() {
+                this.videoPopup.classList.remove('active');
+                this.popupVideo.src = ''; // Para o vídeo ao fechar
+                document.body.style.overflow = ''; // Restaura scroll do fundo
+            }
+        }
+
+        // Inicializa o pop-up
+        document.addEventListener('DOMContentLoaded', () => {
+            new VideoPopup();
         });
+
+
+        // Carousel functionality
+        class ImageCarousel {
+            constructor() {
+                this.carouselTrack = document.getElementById('carouselTrack');
+                this.prevBtn = document.getElementById('prevBtn');
+                this.nextBtn = document.getElementById('nextBtn');
+                this.carouselIndicators = document.getElementById('carouselIndicators');
+
+                this.slides = Array.from(this.carouselTrack.children);
+                this.slideWidth = this.slides[0].offsetWidth; // Initial width
+                this.currentIndex = 0;
+                this.intervalTime = 4000; // 4 seconds
+                this.autoSlideInterval = null;
+
+                this.init();
+            }
+
+            init() {
+                this.createIndicators();
+                this.updateIndicators();
+                this.setupEventListeners();
+                this.startAutoSlide();
+                this.adjustSlideWidth(); // Adjust width initially
+                window.addEventListener('resize', this.adjustSlideWidth.bind(this));
+            }
+
+            adjustSlideWidth() {
+                // Recalculate slide width on resize
+                this.slideWidth = this.slides[0].offsetWidth;
+                this.moveToSlide(this.currentIndex, false); // Reposition without animation
+            }
+
+            createIndicators() {
+                this.slides.forEach((_, index) => {
+                    const indicator = document.createElement('div');
+                    indicator.classList.add('carousel-indicator');
+                    if (index === 0) {
+                        indicator.classList.add('active');
+                    }
+                    indicator.addEventListener('click', () => {
+                        this.moveToSlide(index);
+                        this.resetAutoSlide();
+                    });
+                    this.carouselIndicators.appendChild(indicator);
+                });
+            }
+
+            updateIndicators() {
+                Array.from(this.carouselIndicators.children).forEach((indicator, index) => {
+                    if (index === this.currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+
+            moveToSlide(index, animate = true) {
+                if (index < 0) {
+                    this.currentIndex = this.slides.length - 1;
+                } else if (index >= this.slides.length) {
+                    this.currentIndex = 0;
+                } else {
+                    this.currentIndex = index;
+                }
+
+                const offset = -this.currentIndex * this.slideWidth;
+                this.carouselTrack.style.transition = animate ? 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none';
+                this.carouselTrack.style.transform = `translateX(${offset}px)`;
+                this.updateIndicators();
+            }
+
+            nextSlide() {
+                this.moveToSlide(this.currentIndex + 1);
+            }
+
+            prevSlide() {
+                this.moveToSlide(this.currentIndex - 1);
+            }
+
+            startAutoSlide() {
+                this.autoSlideInterval = setInterval(() => {
+                    this.nextSlide();
+                }, this.intervalTime);
+            }
+
+            resetAutoSlide() {
+                clearInterval(this.autoSlideInterval);
+                this.startAutoSlide();
+            }
+
+            setupEventListeners() {
+                this.nextBtn.addEventListener('click', () => {
+                    this.nextSlide();
+                    this.resetAutoSlide();
+                });
+
+                this.prevBtn.addEventListener('click', () => {
+                    this.prevSlide();
+                    this.resetAutoSlide();
+                });
+
+                // Pause auto-slide on hover
+                this.carouselTrack.addEventListener('mouseenter', () => clearInterval(this.autoSlideInterval));
+                this.carouselTrack.addEventListener('mouseleave', () => this.startAutoSlide());
+            }
+        }
+
+        // Initialize carousel
+        document.addEventListener('DOMContentLoaded', () => {
+            new ImageCarousel();
+        });
+
     </script>
 </body>
 </html>
