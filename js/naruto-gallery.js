@@ -466,8 +466,8 @@ class ImagePopup {
  * 4. Atualizar o console.log com o nome do anime
  */
 document.addEventListener('DOMContentLoaded', () => {
-    // DETECÇÃO: Verifica se estamos numa página de gallery
-    if (document.getElementById('galleryGrid')) {
+    // DETECÇÃO: Verifica se estamos especificamente na página Naruto
+    if (document.getElementById('galleryGrid') && window.location.pathname.includes('naruto.html')) {
         console.log('Página de gallery Naruto detectada - inicializando...');
         // INICIALIZAÇÃO: Cria nova instância da gallery específica
         const narutoGallery = new NarutoGallery();

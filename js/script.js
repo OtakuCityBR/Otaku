@@ -786,14 +786,16 @@ class ImagePopup {
  * 3. Verificar se o ID 'galleryGrid' existe na nova página
  */
 document.addEventListener('DOMContentLoaded', () => {
-    // DETECÇÃO: Verifica se estamos numa página de gallery
-    if (document.getElementById('galleryGrid')) {
-        console.log('Página de gallery detectada - inicializando...');
-        // INICIALIZAÇÃO: Cria nova instância da gallery
+    // DETECÇÃO: Verifica se estamos especificamente na página One Piece
+    if (document.getElementById('galleryGrid') && window.location.pathname.includes('onepiece.html')) {
+        console.log('Página de gallery One Piece detectada - inicializando...');
+        // INICIALIZAÇÃO: Cria nova instância da gallery One Piece
         const onePieceGallery = new OnePieceGallery();
-    } else {
-        // INICIALIZAÇÃO: Pop-up de imagem para páginas que já têm imagens estáticas
-        // PARA ADAPTAR: Usar em páginas que não usam a gallery dinâmica
+    }
+    
+    // INICIALIZAÇÃO: Pop-up de imagem para páginas que já têm imagens estáticas
+    // Só inicializa se não for uma página de gallery específica
+    if (!window.location.pathname.includes('onepiece.html') && !window.location.pathname.includes('naruto.html')) {
         const imagePopup = new ImagePopup();
     }
 });
