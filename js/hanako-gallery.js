@@ -8,16 +8,14 @@ class HanakoGallery {
     constructor() {
         // Lista de imagens do Hanako-kun
         this.images = [
-            "https://i.ibb.co/wNcqYhQ0/st-1.jpg",
-            "https://i.ibb.co/SXFzNrTp/st-2.jpg",
-            "https://i.ibb.co/zWM9YWfY/st-3.jpg",
-            "https://i.ibb.co/xq9GhvHh/st-4.jpg",
-            "https://i.ibb.co/FqJLYc6s/st-5.jpg",
-            "https://i.ibb.co/Ndfvvyrw/st-6.jpg",
-            "https://i.ibb.co/xK78w5Pw/st-7.jpg",
-            "https://i.ibb.co/d0JC4H8z/st-8.jpg",
-            "https://i.ibb.co/p6X2PJh9/st-9.jpg"
-        ];
+			"https://i.ibb.co/GfDFKGF5/Hanako-1.jpg",
+			"https://i.ibb.co/zT2gyW4L/Hanako-2.jpg",
+			"https://i.ibb.co/JW2NX3jK/Hanako-3.jpg",
+			"https://i.ibb.co/B2h32t7G/Hanako-4.jpg",
+			"https://i.ibb.co/6c3DrMpS/Hanako-5.jpg",
+			"https://i.ibb.co/hFH9Cgkn/Hanako-6.jpg",
+			"https://i.ibb.co/dsvQMMvH/Hanako-7.jpg"
+            ];
 
         // Configurações da gallery
         this.imageCache = new Map();
