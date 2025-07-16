@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo Vocaloid - Otaku City | Placas decorativas exclusivas do Vocaloid com qualidade implacável.">
+    <meta name="keywords" content="Vocaloid, Hatsune Miku, Kagamine, placas decorativas, música, decoração otaku">
+    <title>Vocaloid - Otaku City | Placas Decorativas Exclusivas</title>
+    
+    <!-- Pré-conexões para performance -->
+    <link rel="preconnect" href="https://i.ibb.co">
+    <link rel="dns-prefetch" href="https://i.ibb.co">
+    <link rel="preconnect" href="https://wa.me">
+    <link rel="dns-prefetch" href="https://web.whatsapp.com">
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- HEADER PADRÃO -->
+    <header>
+        <div class="logo">
+            <img src="https://i.ibb.co/5fx7ydb/OC.png" alt="Otaku City Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="logo-text">OTAKU <span>CITY</span></div>
+        </div>
+        <div class="header-cta">
+            <a href="catalogo.html" class="cta-button">CATÁLOGO</a>
+        </div>
+    </header>
+
+    <!-- SEÇÃO DE TÍTULO DA PÁGINA -->
+    <section class="page-header">
+        <a href="catalogo.html" class="back-button">← Voltar ao Catálogo</a>
+        <h1 class="page-title">🎵 VOCALOID</h1>
+        <p class="page-subtitle">Escolha sua placa favorita do Vocaloid! Clique em "Quero Esta" na imagem desejada.</p>
+    </section>
+
+    <!-- MOSTRUÁRIO DE IMAGENS - GRID RESPONSIVO -->
+    <section class="onepiece-gallery-section">
+        <div class="onepiece-gallery-grid" id="galleryGrid">
+            <!-- IMPORTANTE: Imagens serão adicionadas dinamicamente via JavaScript -->
+            <!-- Cada imagem terá seu próprio botão "Quero Esta" -->
+        </div>
+    </section>
+
+    <!-- FOOTER PADRÃO -->
+    <footer>
+        <h3>🎵 ENCONTROU SUA PLACA FAVORITA?</h3>
+        <p>Entre em contato e garanta já a sua placa do Vocaloid!</p>
+        <a href="https://wa.me/5511958588616?text=Olá! Gostaria de fazer um pedido de placa do Vocaloid!" class="whatsapp-button">
+            📱 FAZER PEDIDO
+        </a>
+
+        <div class="footer-logo">
+            <img src="https://i.ibb.co/y3wvPbx/OCT.png" alt="Otaku City Logo">
+        </div>
+
+        <hr class="footer-divider">
+
+        <p class="copyright">© 2025 Otaku City - Qualidade Implacável</p>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE "COMO COMPRAR" -->
+    <button class="floating-help-button" id="helpButton">
+        🛒 COMO COMPRAR
+    </button>
+
+    <!-- POP-UP DE VÍDEO "COMO COMPRAR" -->
+    <div class="video-popup-overlay" id="videoPopup">
+        <div class="video-popup-content">
+            <button class="video-popup-close" id="closePopup">×</button>
+            <iframe class="video-popup-iframe" id="popupVideo" src="" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+        </div>
+    </div>
+
+    <!-- POP-UP DE VISUALIZAÇÃO DE IMAGEM - TEMPLATE REUTILIZÁVEL -->
+    <div class="image-popup-overlay" id="imagePopup">
+        <div class="image-popup-content">
+            <!-- IMAGEM EM TAMANHO COMPLETO - Proporção 1:1.4 (retrato) -->
+            <div class="image-container">
+                <img class="image-popup-img" id="popupImage" src="" alt="Visualização da imagem">
+                <!-- BOTÃO FECHAR - Posicionado no canto superior direito DA IMAGEM -->
+                <button class="image-popup-close" id="closeImagePopup">×</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT PRINCIPAL -->
+    <script src="../js/script.js"></script>
+    <!-- SCRIPT ESPECÍFICO DO VOCALOID -->
+    <script src="../js/vocaloid-gallery.js"></script>
+</body>
+</html>
+
