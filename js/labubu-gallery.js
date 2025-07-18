@@ -28,6 +28,8 @@ class LabubuGallery {
             "https://i.ibb.co/1YckVmhr/L-10.jpg",
             "https://i.ibb.co/tp9cMywN/L-11.jpg",
             "https://i.ibb.co/7Nr17qkQ/L-12.jpg",
+            "https://i.ibb.co/Hfp0BM52/L-24.jpg",
+            "https://i.ibb.co/ycwzcL64/L-25.jpg",
             "https://i.ibb.co/STmKXbd/L-13.jpg",
             "https://i.ibb.co/93zkpgFB/L-14.jpg",
             "https://i.ibb.co/DPy15HbY/L-15.jpg"
