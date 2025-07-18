@@ -55,7 +55,6 @@ class AnimesVariadosGallery {
             "https://i.ibb.co/208tbkZ7/a-33.jpg",
             "https://i.ibb.co/1Ygnsypb/a-34.jpg",
             "https://i.ibb.co/why0dDLZ/a-35.jpg",
-            "https://i.ibb.co/HTFfcbzH/a-36.jpg",
             "https://i.ibb.co/0pR6htM5/a-37.jpg",
             "https://i.ibb.co/8gwhqy8k/a-38.jpg",
             "https://i.ibb.co/j9hSd1R6/a-39.jpg",
