@@ -10,6 +10,7 @@ class RecordOfRagnarokGallery {
         this.images = [
             "https://i.ibb.co/PGrv8Yy4/rr-1.jpg",
             "https://i.ibb.co/RpwWGcDV/rr-2.jpg",
+            "https://i.ibb.co/HTFfcbzH/a-36.jpg",
             "https://i.ibb.co/q3hKyzpy/rr-3.jpg"
         ];
 
