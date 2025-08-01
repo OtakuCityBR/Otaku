@@ -8,8 +8,22 @@ class DragonBallGallery {
     constructor() {
         // Lista de imagens do Dragon Ball
         this.images = [
-            "https://i.ibb.co/C5Xjd6Lh/db-1.jpg",
-            "https://i.ibb.co/gXtgdJG/DB.jpg",
+           
+            "https://i.ibb.co/gXtgdJG/DB.jpg",            
+            "https://i.ibb.co/LXCryTbL/db-31.jpg",
+            "https://i.ibb.co/N6LJV6Kw/db-32.jpg",
+            "https://i.ibb.co/C3bL2z9z/db-33.jpg",
+            "https://i.ibb.co/270xKCB4/db-34.jpg",
+            "https://i.ibb.co/mCKv7Z8n/db-35.jpg",
+			"https://i.ibb.co/3YRWDBSn/db-28.jpg",
+            "https://i.ibb.co/KcLyYJGj/db-29.jpg",
+            "https://i.ibb.co/rRkZ1d2y/db-37.jpg",
+            "https://i.ibb.co/zT8j8tZc/db-38.jpg",
+            "https://i.ibb.co/Kj6Ng5YR/db-39.jpg",
+            "https://i.ibb.co/8wX4WHm/db-40.jpg",
+			"https://i.ibb.co/Xk4DVRrY/db-30.jpg",			
+			"https://i.ibb.co/5gZ07ydf/db-36.jpg",
+			"https://i.ibb.co/C5Xjd6Lh/db-1.jpg",
             "https://i.ibb.co/mCC0Y4M5/db-2.jpg",
             "https://i.ibb.co/D6jk7kG/db-3.jpg",
             "https://i.ibb.co/mF8sQ1FQ/db-4.jpg",
@@ -33,20 +47,8 @@ class DragonBallGallery {
             "https://i.ibb.co/Zt85snV/db-24.jpg",
             "https://i.ibb.co/mwssR3r/db-25.jpg",
             "https://i.ibb.co/zhqp5RJ8/db-26.jpg",
-            "https://i.ibb.co/YTFw3807/db-27.jpg",
-            "https://i.ibb.co/3YRWDBSn/db-28.jpg",
-            "https://i.ibb.co/KcLyYJGj/db-29.jpg",
-            "https://i.ibb.co/Xk4DVRrY/db-30.jpg",
-            "https://i.ibb.co/LXCryTbL/db-31.jpg",
-            "https://i.ibb.co/N6LJV6Kw/db-32.jpg",
-            "https://i.ibb.co/C3bL2z9z/db-33.jpg",
-            "https://i.ibb.co/270xKCB4/db-34.jpg",
-            "https://i.ibb.co/mCKv7Z8n/db-35.jpg",
-            "https://i.ibb.co/5gZ07ydf/db-36.jpg",
-            "https://i.ibb.co/rRkZ1d2y/db-37.jpg",
-            "https://i.ibb.co/zT8j8tZc/db-38.jpg",
-            "https://i.ibb.co/Kj6Ng5YR/db-39.jpg",
-            "https://i.ibb.co/8wX4WHm/db-40.jpg"
+            "https://i.ibb.co/YTFw3807/db-27.jpg"
+
         ];
 
         // Configurações da gallery
