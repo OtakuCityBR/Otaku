@@ -9,6 +9,7 @@ class HaikyuuGallery {
         // Lista de imagens do Haikyuu
         this.images = [
             "https://i.ibb.co/S7R6YCLX/Ha-1.jpg",
+            "https://i.ibb.co/GfJ1bfwR/H.jpg",
             "https://i.ibb.co/TMN40jK9/Ha-2.jpg",
             "https://i.ibb.co/vxgNH2LH/Ha-3.jpg",
             "https://i.ibb.co/DHFg9FSV/Ha-4.jpg",
