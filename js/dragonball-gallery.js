@@ -9,6 +9,7 @@ class DragonBallGallery {
         // Lista de imagens do Dragon Ball
         this.images = [
             "https://i.ibb.co/C5Xjd6Lh/db-1.jpg",
+            "https://i.ibb.co/gXtgdJG/DB.jpg",
             "https://i.ibb.co/mCC0Y4M5/db-2.jpg",
             "https://i.ibb.co/D6jk7kG/db-3.jpg",
             "https://i.ibb.co/mF8sQ1FQ/db-4.jpg",
