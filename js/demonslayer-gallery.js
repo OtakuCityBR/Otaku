@@ -9,6 +9,7 @@ class DemonSlayerGallery {
         // Lista de imagens do Demon Slayer
         this.images = [
             "https://i.ibb.co/GfqF0Wwd/1.jpg",
+            "https://i.ibb.co/DHMpFjny/K.jpg",
             "https://i.ibb.co/2bCDGTb/2.jpg",
             "https://i.ibb.co/M5RK3ZFD/3.jpg",
             "https://i.ibb.co/S7NGVHP0/4.jpg",
@@ -16,7 +17,6 @@ class DemonSlayerGallery {
             "https://i.ibb.co/KzsmMZ7z/6.jpg",
             "https://i.ibb.co/QvpjbB5f/7.jpg",
             "https://i.ibb.co/vvhmt5GP/K2.jpg",
-            "https://i.ibb.co/DHMpFjny/K.jpg",
             "https://i.ibb.co/TBjYt0Zk/K1.jpg",
             "https://i.ibb.co/cXVPZy7M/8.jpg",
             "https://i.ibb.co/wFcmPxmW/9.jpg",
