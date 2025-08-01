@@ -9,6 +9,7 @@ class VocaloidGallery {
         // Lista de imagens do Vocaloid
         this.images = [
             "https://i.ibb.co/d0gnf6Zh/vcl-1.jpg",
+            "https://i.ibb.co/rGHQrbdK/V.jpg", 
             "https://i.ibb.co/v4yrwcw0/vcl-2.jpg",
             "https://i.ibb.co/NQcNTP2/vcl-3.jpg"
         ];
