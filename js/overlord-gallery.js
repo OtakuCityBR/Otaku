@@ -9,7 +9,6 @@ class OverlordGallery {
         // Lista de imagens do Overlord
         this.images = [
             "https://i.ibb.co/QjfHPxmz/o-1.jpg",
-            "https://i.ibb.co/5g2HTRZ4/OL-2.jpg",
             "https://i.ibb.co/m57hh30S/OL-3.jpg",
             "https://i.ibb.co/XZ6sBqLp/OL-4.jpg",
             "https://i.ibb.co/x8RnWMn1/OL-5.jpg",
