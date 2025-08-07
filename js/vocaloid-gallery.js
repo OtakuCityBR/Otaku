@@ -8,6 +8,9 @@ class VocaloidGallery {
     constructor() {
         // Lista de imagens do Vocaloid
         this.images = [
+            "https://i.ibb.co/chJDfCDC/vocaloid-5.jpg",
+            "https://i.ibb.co/NgYtQ6YB/vocaloid-6.jpg",
+            "https://i.ibb.co/8nFJtnr0/vocaloid-7.jpg",
             "https://i.ibb.co/d0gnf6Zh/vcl-1.jpg",
             "https://i.ibb.co/rGHQrbdK/V.jpg", 
             "https://i.ibb.co/v4yrwcw0/vcl-2.jpg",
