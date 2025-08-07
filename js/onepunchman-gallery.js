@@ -8,6 +8,8 @@ class OnePunchManGallery {
     constructor() {
         // Lista de imagens do One Punch Man
         this.images = [
+            "https://i.ibb.co/7xx8n2Mn/One-Punch-7.jpg",
+            "https://i.ibb.co/d4nKM4sY/One-Punch-8.jpg",
             "https://i.ibb.co/p6mjpkMN/1.jpg",
             "https://i.ibb.co/673Wcm7Z/2.jpg",
             "https://i.ibb.co/SwXRVtDM/3.jpg",
