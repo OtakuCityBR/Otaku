@@ -10,7 +10,8 @@ class BlueLockGallery {
         this.images = [
             "https://i.ibb.co/1tNdGdDd/BL-1.jpg",
             "https://i.ibb.co/DfdJgmC0/BL-2.jpg",
-            "https://i.ibb.co/CKp4gRjC/BL-3.jpg"
+            "https://i.ibb.co/CKp4gRjC/BL-3.jpg",
+            "https://i.ibb.co/SXJJ9Fd2/ksu.jpg"
         ];
 
         // Configurações da gallery
