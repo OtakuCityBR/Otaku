@@ -8,6 +8,8 @@ class BlackCloverGallery {
     constructor() {
         // Lista de imagens do Black Clover
         this.images = [
+            "https://i.ibb.co/DHs6mHh1/Black-Clover-7.jpg",
+            "https://i.ibb.co/ccs3w1kd/Black-Clover-8.jpg",
             "https://i.ibb.co/dscyrjSj/B-1.jpg",
             "https://i.ibb.co/MDQjj6N9/B-2.jpg",
             "https://i.ibb.co/DDjWpHP1/B-3.jpg",
