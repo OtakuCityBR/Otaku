@@ -8,6 +8,8 @@ class BlueLockGallery {
     constructor() {
         // Lista de imagens do Blue Lock
         this.images = [
+            "https://i.ibb.co/gh9CV2G/BL-5.jpg",
+            "https://i.ibb.co/ZzwfbTMX/BL-4.jpg",
             "https://i.ibb.co/1tNdGdDd/BL-1.jpg",
             "https://i.ibb.co/DfdJgmC0/BL-2.jpg",
             "https://i.ibb.co/CKp4gRjC/BL-3.jpg",
