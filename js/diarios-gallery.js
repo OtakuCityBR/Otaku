@@ -11,7 +11,10 @@ class DiariosGallery {
             "https://i.ibb.co/4cNLS9x/dua-1.jpg",
             "https://i.ibb.co/b5fKkrjP/dua-2.jpg",
             "https://i.ibb.co/zTxXrv4f/dua-3.jpg",
-            "https://i.ibb.co/274zB8XF/dua-4.jpg"
+            "https://i.ibb.co/274zB8XF/dua-4.jpg",
+            "https://i.ibb.co/bjfjzs78/DUA-5.jpg",
+            "https://i.ibb.co/G4KkH661/DUA-6.jpg",
+            "https://i.ibb.co/JjxPDkr5/DUA-7.jpg"
         ];
 
         // Configurações da gallery
