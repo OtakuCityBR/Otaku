@@ -9,6 +9,7 @@ class FrierenGallery {
         // Lista de imagens do Frieren
         this.images = [
             "https://i.ibb.co/4Rynms3L/f-1.jpg",
+            "https://i.ibb.co/Gvw2Zxkq/Frieren.jpg",
             "https://i.ibb.co/VpwGJCNd/f-2.jpg",
             "https://i.ibb.co/DDk3jTWZ/f-3.jpg",
             "https://i.ibb.co/BMYCPNB/f-4.jpg",
