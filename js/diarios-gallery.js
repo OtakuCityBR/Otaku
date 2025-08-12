@@ -14,6 +14,7 @@ class DiariosGallery {
             "https://i.ibb.co/274zB8XF/dua-4.jpg",
             "https://i.ibb.co/bjfjzs78/DUA-5.jpg",
             "https://i.ibb.co/G4KkH661/DUA-6.jpg",
+            "https://i.ibb.co/ycpVmzrD/DUA-6a.jpg",
             "https://i.ibb.co/JjxPDkr5/DUA-7.jpg"
         ];
 
