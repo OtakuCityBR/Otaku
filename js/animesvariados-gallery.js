@@ -11,6 +11,7 @@ class AnimesVariadosGallery {
             "https://i.ibb.co/qYLjDYqD/GK.jpg",
             "https://i.ibb.co/B2KrKvnN/GK1.jpg",
             "https://i.ibb.co/jF0S5mB/GK2.jpg",
+            "https://i.ibb.co/6R7g0P64/TB.jpg",
             "https://i.ibb.co/1tDS3znG/d-1.jpg",
             "https://i.ibb.co/083mszY/d-2.jpg",
             "https://i.ibb.co/27G9DNwv/Hajime-1.jpg",
