@@ -10,6 +10,7 @@ class PokemonGallery {
         this.images = [
             "https://i.ibb.co/x8wqNvz0/p-1.jpg",
             "https://i.ibb.co/vCjBLpT4/p-2.jpg",
+            "https://i.ibb.co/sd7txCgZ/p-18.jpg",
             "https://i.ibb.co/Xr2WB1DF/p-3.jpg",
             "https://i.ibb.co/s9fxSVzw/p-4.jpg",
             "https://i.ibb.co/Wv9YLXvK/p-5.jpg",
