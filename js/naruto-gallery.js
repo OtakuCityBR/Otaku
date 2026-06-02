@@ -23,7 +23,7 @@ class NarutoGallery {
             "https://i.ibb.co/NgqVfpLx/N-3.jpg",
             "https://i.ibb.co/k63qg0b7/N-4.jpg",
             "https://i.ibb.co/8DL9gtrq/N-5.jpg",
-            "https://i.ibb.co/15zJjxL/N-6.jpg",
+            *"https://i.ibb.co/15zJjxL/N-6.jpg"*,
             "https://i.ibb.co/dsDn4k8c/N-7.jpg",
             "https://i.ibb.co/Lhp5RfYP/N-8.jpg",
             "https://i.ibb.co/wZ6yhkXw/N-9.jpg",
